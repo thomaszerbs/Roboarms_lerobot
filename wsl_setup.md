@@ -1,11 +1,11 @@
-# ROCm on WSL2 - Full Setup Guide
+# ROCm Setup on WSL2
 
 **Hardware:** AMD Ryzen APU (integrated GPU)  
-**OS:** Windows 11 + WSL2 (Ubuntu 24.04)
+**OS:** Windows 11 with WSL2 (Ubuntu 24.04)
 
 ---
 
-## Before Running — Do These in Windows First
+## Prerequisites
 
 1. **Install AMD Adrenalin driver 26.2.2 or later**  
    https://www.amd.com/en/support/download/drivers.html
