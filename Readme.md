@@ -298,7 +298,7 @@ For detailed training instructions, see the [Train a Policy Reference](https://h
 
 ### AMD Development Cloud for Training
 
-For high-performance training, we recommend using **AMD MI300X GPUs** on the [AMD Development Cloud](https://www.amd.com/en/registration/ai-dev-program-sign-up-form.html), which provides access to premium data center–grade hardware along with $100 in cloud credits when you join the AI Developer Program
+For high-performance training, we recommend using **AMD MI300X GPUs** on the [AMD Development Cloud](https://www.amd.com/en/developer/ai-dev-program.html), which provides access to premium data center–grade hardware along with $100 in cloud credits when you join the AI Developer Program
 
 ### Training Command
 
