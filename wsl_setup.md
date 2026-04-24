@@ -347,7 +347,8 @@ hf auth login
 #### 2. Get Your Username
 ```bash
 export HF_USER=$(hf auth whoami | grep -v '✓\|Logged' | grep -v '^$' | head -1 | tr -d ' ' | sed 's/user://')
-echo $HF_USER```
+echo $HF_USER
+```
 
 ### Record Dataset
 
