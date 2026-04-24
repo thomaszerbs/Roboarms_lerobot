@@ -36,6 +36,11 @@ If you don't have conda installed, get it using [Miniforge](https://github.com/c
 
 ```bash
 bash Miniforge3-Linux-x86_64.sh
+
+# Add to PATH
+export PATH="$HOME/miniforge3/bin:$PATH"
+conda init
+source ~/.bashrc
 ```
 
 Restart your terminal after installation.
