@@ -179,11 +179,23 @@ BUSID  VID:PID    DEVICE                                 STATE
 **Bind each device (Run Windows PowerShell as Administrator):**
 ```powershell
 usbipd bind --force --busid <BUSID>
+
+# E.g.,
+# usbipd bind --force --busid 8-1
+# usbipd bind --force --busid 8-2
+# usbipd bind --force --busid 8-3
+# usbipd bind --force --busid 8-4
 ```
  
 **Attach to WSL (every time you reconnect or restart, Run Windows PowerShell as Administrator):**
 ```powershell
 usbipd attach --wsl --busid <BUSID>
+
+# E.g.,
+# usbipd attach --wsl --busid 8-1
+# usbipd attach --wsl --busid 8-2
+# usbipd attach --wsl --busid 8-3
+# usbipd attach --wsl --busid 8-4
 ```
  
 **Verify in WSL:**
