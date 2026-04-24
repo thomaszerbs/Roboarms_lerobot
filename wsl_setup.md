@@ -351,6 +351,16 @@ echo $HF_USER```
 
 ### Record Dataset
 
+Install additional packages for WSL before recording:
+ 
+```bash
+pip install pynput
+sudo apt install speech-dispatcher -y
+```
+ 
+- **`pynput`** — enables keyboard control during recording (Space to save episode, Enter to stop)
+- **`speech-dispatcher`** — required by lerobot's audio cues, crashes without it
+
 Record robot demonstrations with cameras:
 
 ```bash
