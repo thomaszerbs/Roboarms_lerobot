@@ -15,7 +15,7 @@ This guide provides step-by-step instructions for setting up robotic arms using 
 ## Prerequisites
 
 ### Install WSL with Ubuntu 24.04 (run in Windows PowerShell)
-   ```
+   ```powershell
    wsl --install Ubuntu-24.04
    ```
 
@@ -74,8 +74,6 @@ EOF
 # Verify setup - GPU should appear in rocminfo output
 rocminfo
 ```
-
-
 
 ## Environment Setup
 
@@ -153,6 +151,45 @@ For detailed arm setup instructions, refer to the [SO-101 Documentation](https:/
 > **Important:** Before proceeding, ensure you have connected the power adapters correctly:
 > - **Follower arm**: 12V adapter
 > - **Leader arm**: 5V adapter
+
+### WSL USB Device Passthrough
+USB devices (MotorBus, cameras) must be passed from Windows into WSL using `usbipd-win`.
+ 
+**Install usbipd (Windows PowerShell):**
+```powershell
+winget install --id dorssel.usbipd-win -e
+```
+ 
+**Find your BUSIDs:**
+```powershell
+usbipd list
+```
+ 
+Example output:
+```
+BUSID  VID:PID    DEVICE                                 STATE
+8-1    05a3:9230  USB2.0_CAM1                            Attached
+8-2    0c45:2283  UGREEN Camera                          Attached
+8-3    1a86:55d3  USB-Enhanced-SERIAL CH343 (COM3)       Attached
+8-4    1a86:55d3  USB-Enhanced-SERIAL CH343 (COM4)       Shared (forced)
+```
+> MotorBus = `USB-Enhanced-SERIAL` or similar USB Serial device  
+> Camera = `USB2.0_CAM`, `UGREEN Camera`, or similar device
+ 
+**Bind each device (Run Windows PowerShell as Administrator):**
+```powershell
+usbipd bind --force --busid <BUSID>
+```
+ 
+**Attach to WSL (every time you reconnect or restart, Run Windows PowerShell as Administrator):**
+```powershell
+usbipd attach --wsl --busid <BUSID>
+```
+ 
+**Verify in WSL:**
+```bash
+ls -l /dev/ttyACM* /dev/video*
+```
 
 ### 1. Identify USB Ports
 
