@@ -374,6 +374,7 @@ lerobot-record \
     --teleop.port=/dev/ttyACM0 \
     --teleop.id=my_awesome_leader_arm \
     --display_data=true \
+    --play_sounds=false \
     --dataset.repo_id=${HF_USER}/stack-cubes \
     --dataset.num_episodes=5 \
     --dataset.episode_time_s=20 \
