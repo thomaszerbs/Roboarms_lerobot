@@ -341,7 +341,7 @@ Before recording datasets, authenticate with Hugging Face:
 
 #### 1. Login to Hugging Face
 ```bash
-huggingface-cli login
+hf auth login
 ```
 
 #### 2. Get Your Username
