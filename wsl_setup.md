@@ -346,7 +346,7 @@ hf auth login
 
 #### 2. Get Your Username
 ```bash
-export HF_USER=$(huggingface-cli whoami | grep '^  user:' | awk '{print $2}')
+export HF_USER=$(hf auth whoami | head -1)
 echo $HF_USER
 ```
 
